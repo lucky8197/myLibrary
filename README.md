@@ -1,2 +1,0 @@
-# myLibrary
-liabrary manage system
