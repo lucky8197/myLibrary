@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE validators PUBLIC 
+	"-//Apache Struts//XWork Validator 1.0.3//EN"
+	"http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+<validators>
+	<field name="person.user">
+		<field-validator type="required">
+			<message>用户名必填</message>
+		</field-validator>
+		<field-validator type="regex">
+			<param name="regex"><![CDATA[(\w{4,20})]]></param>
+			<message>您输入的用户名只能是字母和数字，且长度必须在4到20之间</message>
+		</field-validator>
+	</field>
+	
+	<field name="person.name">
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>你的姓名的长度不能大于20</message>
+		</field-validator>
+	</field>
+	
+	<field name="person.password">
+		<field-validator type="requiredstring">
+			<message>密码必填！</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="minLength">6</param>
+			<param name="maxLength">20</param>
+			<message>你的密码长度必须在6到20之间</message>
+		</field-validator>
+	</field>
+	
+	<field name="repassword">
+		<field-validator type="requiredstring">
+			<message>重复密码必填！</message>
+		</field-validator>
+	</field>
+	
+	<field name="person.birthday">
+		<field-validator type="date">
+			<param name="min">1900-01-01</param>
+			<param name="max">2019-12-31</param>
+			<message>你的生日必须在 ${mix}到 ${max}之间</message>
+		</field-validator>
+	</field>
+		
+	<field name="person.vocation">
+		<field-validator type="stringlength">
+			<param name="maxLength">10</param>
+			<message>你的职业的长度不能大于10</message>
+		</field-validator>
+	</field>
+	
+	<field name="person.email">
+		<field-validator type="requiredstring">
+			<message>邮箱必填</message>
+		</field-validator>
+		<field-validator type="email">
+			<message>你的电子邮件必须是一个有效的电邮地址</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">50</param>
+			<message>你的电子邮件的长度不能大于50</message>
+		</field-validator>
+	</field>
+	
+	<field name="person.tel">
+		<field-validator type="requiredstring">
+			<message>电话号码必填</message>
+		</field-validator>
+		<field-validator type="stringlength">
+			<param name="maxLength">20</param>
+			<message>你的职业的长度不能大于20</message>
+		</field-validator>
+	</field>
+</validators>	

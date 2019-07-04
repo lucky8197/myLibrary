@@ -1,0 +1,13 @@
+/*表单部分*/
+#form {
+	width:577px;
+	margin: 30px auto 0;
+}
+
+#form .update {
+	margin-left: 250px;
+	width: 80px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: blue;
+}

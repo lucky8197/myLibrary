@@ -1,0 +1,112 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+body {
+	margin: 0;
+	background-image: url('../images/ad_bg.gif');
+}
+
+.wrap {
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	height: 660px;
+	width: 1000px;
+	margin: auto;
+	background-image: url('../images/content.jpg');
+}
+/*显示时间区*/
+.time {
+	display: inline-block;
+	float: right;
+	margin-top: 30px;
+	height: 30px;
+}
+
+.time:hover {
+	color: #f40;
+}
+/*登录表单*/
+.login_area {
+	overflow: hidden;
+	background-image: url('../images/timg.jpg');
+	background-size: 100% 100%;
+	margin: auto;
+	margin-top: 66px;
+	width: 400px;
+	height: 300px;
+}
+
+.login_area #form1 {
+	width: 300px;
+	margin: auto;
+	margin-top: 1px;
+}
+
+.action_message {
+	margin: 5px auto 0;
+	width: 250px;
+	height: 20px;
+	color: red;
+}
+.field_message {
+	margin: 5px auto 0;
+	width: 250px;
+	height: 40px;
+	color: red;
+}
+
+.login_area #form1 .input {
+	height: 20px;
+	border-radius: 8px;
+	margin-top: 1px;
+}
+
+.login_area #form1 input.button1, 
+.login_area #form1 input.button2 {
+	height: 30px;
+	width: 80px;
+	margin-left: 10px;
+	margin-top: 100px;
+	border-radius: 5px;
+	background-color: blue;
+}
+
+.login_area #form1 input.button1:hover, 
+.login_area #form1 input.button2:hover
+	{
+	color: yellow;
+}
+
+#form1 .regist_area {
+	margin: auto;
+	width: 200px;
+	height: 30px;
+	margin-top: 10px;
+}
+
+#form1 .regist_area span {
+	color: gray;
+}
+
+#form1 .regist_area a {
+	display: inline-block;
+	font-size: 16px;
+	width: 80px;
+	height: 30px;
+	color: #f40;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+#form1 .regist_area a:hover {
+	color: yellow;
+	font-size: 18px;
+	font-weight: bolder;
+}

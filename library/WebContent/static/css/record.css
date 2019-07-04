@@ -1,0 +1,50 @@
+/*结果区*/
+.wrap {
+	height: 425px;
+	width: 1000px;
+	margin:0 auto;
+	background-image: url('../images/content.jpg');
+}
+.resultArea {
+	display: inline-block;
+	width: 1000px;
+	height: 333px;
+	margin: 0 auto;
+}
+
+.resultArea table {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 20px;
+	background-color: #999999;
+}
+
+.resultArea table .table_caption {
+	margin-top:10px;
+	font-weight: bold;
+}
+
+.resultArea .pagingArea {
+	width: 1000px;
+	height: 30px;
+	margin-top: 30px;
+}
+
+.resultArea .pagingArea .pagingWrap {
+	width: 300px;
+	height: 30px;
+	margin: 0 auto;
+}
+
+.resultArea .paging {
+	float: left;
+	margin-left: 8px;
+}
+
+.resultArea .pagingArea ul li a {
+	color: black;
+}
+
+.resultArea .pagingArea ul li a:hover {
+	color: red;
+}

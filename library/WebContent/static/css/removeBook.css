@@ -1,0 +1,65 @@
+
+/*表单部分*/
+#form {
+	width: 500px;
+	height: 100px;
+	margin: 30px auto 0;
+}
+
+#form #bookInfo {
+	outline: 0;
+	border: 1px solid blue;
+	width: 400px;
+	height: 30px;
+	border-radius: 10px;
+}
+
+#form .find {
+	width: 50px;
+	height: 30px;
+	border-radius: 10px;
+	margin-left: 10px;
+	background-color: blue;
+}
+
+#form .wayArea {
+	margin-top: 20px;
+	width: 460px;
+	height: 20px;
+}
+
+#form .fingWay {
+	color: #666666;
+}
+
+/*检索结果区*/
+.resultArea {
+	width: 1000px;
+	height: 280px;
+	margin: 0 auto;
+}
+
+.resultArea .message{
+	width:200px;
+	margin:0 auto;	
+}
+
+.resultArea table {
+	background-color: #999999;
+	width: 888px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.borrow_area {
+	width: 100px;
+	height: 40px;
+	margin: 20px auto 0px;
+}
+
+.borrow_area .borrowButton {
+	width: 60px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: blue;
+}

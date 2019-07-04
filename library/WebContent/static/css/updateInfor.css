@@ -1,0 +1,87 @@
+.wrap {
+	height: 100%;
+	width: 100%;
+}
+
+.content {
+	height: 408px;
+	width: 1000px;
+	margin: auto;
+}
+
+/*更新区*/
+.update_area {
+	overflow: hidden;
+	background-image: url('../images/bg_regist.jpg');
+	background-size: 100% 100%;
+	margin: auto;
+	margin-top: 20px;
+	width: 600px;
+	height: 320px;
+}
+
+.update_area .caption {
+	width: 150px;
+	font-size: 20px;
+	font-weight: 700;
+	margin: 10px auto;
+}
+
+.update_area .caption {
+	font-weight: bold;
+	width: 150px;
+	margin: 10px auto;
+}
+
+.update_area #form {
+	width: 550px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.update_area #form input {
+	color: gray;
+}
+
+.update_area #form span {
+	margin-left: 10px;
+}
+
+.update_area #form input {
+	display: inline-block;
+}
+
+.update_area #form .padding1 {
+	display: inline-block;
+	width: 6px;
+}
+
+.update_area #form .padding2 {
+	display: inline-block;
+	width: 22px;
+}
+
+.update_area #form span {
+	font-size: 12px;
+	color: gray;
+}
+
+.update_area #form input.update, 
+.update_area #form input.reset {
+	display: inline-block;
+	color: #FFF;
+	font-size: 16px;
+	width: 100px;
+	height: 30px;
+	margin-top: 30px;
+	margin-left: 10px;
+	background-color: blue;
+	font-weight: bold;
+	border-radius: 10px;
+}
+
+.update_area #form input.update:hover, 
+.update_area #form input.reset:hover
+	{
+	color: #f40;
+}

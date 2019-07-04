@@ -1,0 +1,23 @@
+1.PO中id属性的类型尽量使用包装类Integer。这样允许为null。
+
+2.因为struts2中的核心过滤器导致js、css、等静态资源无法访问。可在struts.xml中设置敞常量
+  struts.action.excludePattern  为 "/static/*?"。
+
+3.vo 用于表现层和逻辑层的数据传输。不要用po替代。
+
+4.客户端和服务端都需要输入校验。因为客户端的js验证。可以通过禁用js来绕过验证。
+
+5.可以将导航栏写入一个jsp页面？实现复用。但会存在一个到本页的跳转，不过影响不大。
+
+6.使用struts2的标签库里的。iteraor代替for,  使用<s:property>加EL的组合可以取得session/
+application内的属性。避免了编写java代码。提高可读性。
+
+7 类型转换和输入校验错误都会被封装到fieldError中。可使用<s:fielderror/>获取错误信息(先判断
+fieldErrors.size() > 0)
+
+8.在struts环境下。<meta http-equiv="refresh" content="3;url=<s:url action="login" includeParams="none"/>">
+使用上面的语句来执行注册3秒后。自动跳转login页面。通过struts2标签的<s:url>实现。想login的action发送请求。
+
+9一定要小心SQL注入。
+
+                                                                                                                                         

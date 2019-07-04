@@ -1,0 +1,45 @@
+/*核心部分*/
+.center {
+	width: 1000px;
+	height: 350px;
+	margin:auto;
+}
+.center .ranking {
+	float: left;
+	width: 600px;
+	height: 350px;
+}
+.center .ranking table {
+	text-align: center;
+	background-color: #666666;
+	width: 600px;
+}
+
+.center .ranking table .red {
+	color: #f40;
+}
+
+.center .ranking span {
+	margin-left: 250px;
+	color: #f40;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.center .notice {
+	float: right;
+	height: 270px;
+	width: 350px;
+	border: 1px solid gray;
+}
+
+.center span {
+	display: inline-block;
+	height: 30px;
+	margin-left: 200px;
+	font-size: 16px;
+	color: #f40;
+	font-weight: bolder;
+	line-height: 30px;
+}

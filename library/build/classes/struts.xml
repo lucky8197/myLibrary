@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<constant name="struts.action.excludePattern"
+		value="/static/.*?" />
+	<package name="pa1" extends="struts-default">
+
+		<!-- 全局result映射 -->
+		<global-results>
+			<result name="login">/WEB-INF/content/login.jsp</result>
+		</global-results>
+
+		<!-- ==================================读者Action=========================================== -->
+
+		<!-- 登录系统 -->
+		<action name="processLogin" class="action.LoginAction"
+			method="processLogin">
+			<result name="red">/WEB-INF/content/reader/reader.jsp</result>
+			<result name="mgr">/WEB-INF/content/manager/manager.jsp</result>
+			<result name="error">/WEB-INF/content/login.jsp</result>
+			<result name="input">/WEB-INF/content/login.jsp</result>
+		</action>
+
+		<!-- 退出系统 -->
+		<action name="logOut" class="action.LogOutAction">
+			<result>/WEB-INF/content/login.jsp</result>
+		</action>
+
+		<!-- 跳转注册页面 -->
+		<action name="regist">
+			<result>/WEB-INF/content/regist.jsp</result>
+		</action>
+
+		<!-- 用户名验证 -->
+		<action name="checkUser" class="action.CheckUserAction"
+			method="checkUser">
+			<!-- Ajax支持 -->
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+			<result name="input">/WEB-INF/content/regist.jsp</result>
+		</action>
+
+		<!-- 用户注册 -->
+		<action name="savePerson" class="action.RegistAction"
+			method="savePerson">
+			<result>/WEB-INF/content/regist_success.jsp</result>
+			<result name="error">/WEB-INF/content/regist.jsp</result>
+			<result name="input">/WEB-INF/content/regist.jsp</result>
+		</action>
+
+		<!-- 跳转读者首页 -->
+		<action name="toHomePage">
+			<result>/WEB-INF/content/reader/reader.jsp</result>
+		</action>
+
+		<!-- 跳转到读者借书页面 -->
+		<action name="borrowPage">
+			<result>/WEB-INF/content/reader/borrow.jsp</result>
+		</action>
+
+		<!-- 跳转到读者还书页面 -->
+		<action name="giveBackPage">
+			<result>/WEB-INF/content/reader/giveBack.jsp</result>
+		</action>
+
+		<!-- 跳转到借阅记录页面 -->
+		<action name="borrowRecordPage">
+			<result>/WEB-INF/content/reader/record.jsp</result>
+		</action>
+
+		<!--显示图书借阅排行 -->
+		<action name="showBookTop" class="action.ReaderAction"
+			method="showBookTop">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 检索书籍(借阅) -->
+		<action name="findBookReader" class="action.BorrowAction"
+			method="findBook">
+			<result>/WEB-INF/content/reader/borrow.jsp</result>
+			<result name="error">/WEB-INF/content/reader/borrow.jsp</result>
+		</action>
+		
+		<!-- 检索书籍(管理员删除) -->
+		<action name="findBookManager" class="action.BorrowAction"
+			method="findBook">
+			<result>/WEB-INF/content/manager/removeBook.jsp</result>
+			<result name="error">/WEB-INF/content/manager/removeBook.jsp</result>
+		</action>
+		
+		<!-- 借阅书籍 -->
+		<action name="borrowBook" class="action.BorrowAction"
+			method="borrowBook">
+			<result type="stream">
+				<param name="contentType">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 查找所有未归还的借阅记录 -->
+		<action name="notGiveBackBorrows" class="action.GiveBackAction"
+			method="notGiveBackBorrows">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 还书 -->
+		<action name="giveBack" class="action.GiveBackAction"
+			method="giveBack">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 查询所有的借阅记录 -->
+		<action name="findBorrowRecord"
+			class="action.BorrowRecordAction" method="findBorrowRecord">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 借阅记录换页 -->
+		<action name="ChangePage" class="action.BorrowRecordAction"
+			method="ChangePage">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 跳转到修改个人信息页面 -->
+		<action name="updateInforPage" class="action.UpdateInforAction">
+			<result>/WEB-INF/content/reader/updateInfor.jsp</result>
+		</action>
+
+		<!-- 获取旧信息 -->
+		<action name="getOldInfor" class="action.UpdateInforAction"
+			method="getOldInfor">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 修改信息 (读者) -->
+		<action name="updatePerson" class="action.UpdateInforAction"
+			method="updatePerson">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+
+
+
+		<!-- ==================================管理员Action===================================== -->
+
+		<!-- 跳转管理员首页 -->
+		<action name="toManagerHomePage">
+			<result>/WEB-INF/content/manager/manager.jsp</result>
+		</action>
+
+		<!-- 跳转到搜索读者页面 -->
+		<action name="toSearchReaderPage">
+			<result>/WEB-INF/content/manager/searchReader.jsp</result>
+		</action>
+
+		<!-- 跳转到添加读者页面 -->
+		<action name="toAddReaderPage">
+			<result>/WEB-INF/content/manager/addReader.jsp</result>
+		</action>
+
+		<!-- 跳转到更新读者页面 -->
+		<action name="toUpdateReaderPage">
+			<result>/WEB-INF/content/manager/updateReader.jsp</result>
+		</action>
+
+		<!-- 跳转到删除读者页面 -->
+		<action name="toRemoveReaderPage">
+			<result>/WEB-INF/content/manager/removeReader.jsp</result>
+		</action>
+
+		<!-- 跳转到添加图书页面 -->
+		<action name="toAddBookPage">
+			<result>/WEB-INF/content/manager/addBook.jsp</result>
+		</action>
+
+		<!-- 跳转到更新图书页面 -->
+		<action name="toUpdateBookPage">
+			<result>/WEB-INF/content/manager/updateBook.jsp</result>
+		</action>
+
+		<!-- 跳转到删除图书页面 -->
+		<action name="toRemoveBookPage">
+			<result>/WEB-INF/content/manager/removeBook.jsp</result>
+		</action>
+
+		<!-- 跳转到公告编辑页面 -->
+		<action name="toUpdateNoticePage">
+			<result>/WEB-INF/content/manager/updateNotice.jsp</result>
+		</action>
+
+		<!--删除读者 -->
+		<action name="removeReader" class="action.RemoveReaderAction">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!--搜索读者 -->
+		<action name="searchReader" class="action.SearchReaderAction">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!--更新读者 -->
+		<action name="updateReader" class="action.UpdateReaderAction">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!--=添加读者 -->
+		<action name="addReader" class="action.AddReaderAction">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+
+
+		<!-- 验证ID(更新图书) -->
+		<action name="checkId" class="action.UpdateBookAction"
+			method="checkId">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!--更新图书 -->
+		<action name="updateBook" class="action.UpdateBookAction"
+			method="updateBook">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!-- 删除书籍 -->
+		<action name="removeBook" class="action.RemoveBookAction">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!--添加书籍 -->
+		<action name="addBook" class="action.AddBookAction">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<!--更新公告Action -->
+		<action name="updateNotice" class="action.UpdateNotice">
+			<result type="stream">
+				<param name="content">text/html</param>
+				<param name="inputName">result</param>
+			</result>
+		</action>
+
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
+</struts>

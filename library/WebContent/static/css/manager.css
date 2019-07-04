@@ -1,0 +1,62 @@
+/*核心部分*/
+.center {
+	width: 1000px;
+	height: 350px;
+	margin: 10px auto 0;
+}
+
+.center .ranking {
+	float: left;
+	width: 666px;
+	height: 350px;
+}
+
+.center .ranking table {
+	background-color: #666666;
+	width: 666px;
+	text-align: center;
+}
+
+.center .ranking table .red {
+	color: #f40;
+}
+
+.center .ranking span {
+	margin-left: 250px;
+	color: #f40;
+	font-size: 18px;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.center .notice {
+	float: right;
+	height: 270px;
+	width: 300px;
+	border: 1px solid gray;
+}
+
+.center  span {
+	display: inline-block;
+	height: 30px;
+	margin-left: 150px;
+	font-size: 16px;
+	color: #f40;
+	font-weight: bolder;
+	line-height: 30px;
+}
+
+/*版权部分*/
+.copyright_wrap {
+	margin-top: 20px;
+	width: 100%;
+	height: 50px;
+	font-size: 12px;
+}
+
+.copyright_wrap .copyright {
+	width: 600px;
+	height: 100%;
+	margin: auto;
+	text-align: center;
+}
